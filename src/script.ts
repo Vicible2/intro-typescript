@@ -5,9 +5,10 @@
         event.preventDefault();
 
         const secretNumber = generateSecretNumber();
-        const userNumber = document.getElementById('guess').value;
+        const userNumber: HTMLInputElement = document.querySelector('#guess');
+        const userGuess = userNumber.valueAsNumber;
 
-        if (secretNumber == userNumber) {
+        if (secretNumber == userGuess) {
             alert("Awesome! You number " + userNumber + " was correct. You can be named many things, hungry not being one of them.");
         } else {
             alert("Bummer... You guessed " + userNumber + " and the secret number was " + secretNumber + ".");
