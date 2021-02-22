@@ -1,3 +1,4 @@
+"use strict";
 (function () {
     document.getElementById('guess-form').addEventListener("submit", compareUserGuess);
     function compareUserGuess(event) {
@@ -6,10 +7,10 @@
         var userNumber = document.querySelector('#guess');
         var userGuess = userNumber.valueAsNumber;
         if (secretNumber == userGuess) {
-            alert("Awesome! You number " + userNumber + " was correct. You can be named many things, hungry not being one of them.");
+            alert("Awesome! You number " + userGuess + " was correct. You can be named many things, hungry not being one of them.");
         }
         else {
-            alert("Bummer... You guessed " + userNumber + " and the secret number was " + secretNumber + ".");
+            alert("Bummer... You guessed " + userGuess + " and the secret number was " + secretNumber + ".");
         }
     }
     function generateSecretNumber() {

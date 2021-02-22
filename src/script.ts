@@ -1,17 +1,17 @@
 (function() {
-    document.getElementById('guess-form').addEventListener("submit", compareUserGuess);
+    document.getElementById('guess-form')!.addEventListener("submit", compareUserGuess);
 
-    function compareUserGuess (event) {
+    function compareUserGuess (event:Event) {
         event.preventDefault();
 
-        const secretNumber = generateSecretNumber();
-        const userNumber: HTMLInputElement = document.querySelector('#guess');
-        const userGuess = userNumber.valueAsNumber;
+        const secretNumber: number = generateSecretNumber();
+        const userNumber = document.querySelector('#guess') as HTMLInputElement;
+        const userGuess:number = userNumber.valueAsNumber;
 
         if (secretNumber == userGuess) {
-            alert("Awesome! You number " + userNumber + " was correct. You can be named many things, hungry not being one of them.");
+            alert("Awesome! You number " + userGuess + " was correct. You can be named many things, hungry not being one of them.");
         } else {
-            alert("Bummer... You guessed " + userNumber + " and the secret number was " + secretNumber + ".");
+            alert("Bummer... You guessed " + userGuess + " and the secret number was " + secretNumber + ".");
         }
     }
 
@@ -21,7 +21,7 @@
         return secretNumber;
     }
 
-    function getRandomArbitrary(min, max) {
+    function getRandomArbitrary(min:number, max:number) {
         return Math.round(Math.random() * (max - min) + min);
     }
 })();
