@@ -4,6 +4,7 @@
         "allowJs": true,
         "target": "es5",
         "watch": true,
+        "checkJs": true,
     },
     "include": ["./src/**/*"]
 }
