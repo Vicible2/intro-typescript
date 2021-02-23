@@ -6,7 +6,7 @@
         var secretNumber = generateSecretNumber();
         var userNumber = document.querySelector('#guess');
         var userGuess = userNumber.valueAsNumber;
-        if (secretNumber == userGuess) {
+        if (secretNumber === userGuess) {
             alert("Awesome! You number " + userGuess + " was correct. You can be named many things, hungry not being one of them.");
         }
         else {
